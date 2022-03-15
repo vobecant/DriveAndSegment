@@ -134,12 +134,18 @@ def predict(input_img):
     input_img = transform(input_img)
     input_img = torch.unsqueeze(input_img, 0)
 
+    print('Loaded and prepaded image.')
+
     with torch.no_grad():
         segmentation = segment_segmenter(input_img, model, window_size, window_stride).squeeze().detach()
+        print('Segmented image.')
         segmentation_remap = remap(segmentation)
+        print('Remapped image.')
 
     drawing_pseudo = colorize_one(segmentation_remap)
+    print('Pseudo colors done.')
     drawing_cs = map2cs(segmentation_remap)
+    print('CS colors done.')
 
     # drawing_pseudo = transforms.ToPILImage()(drawing_pseudo)
     drawing_cs = transforms.ToPILImage()(drawing_cs)
