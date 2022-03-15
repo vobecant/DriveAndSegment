@@ -1,18 +1,17 @@
-from pathlib import Path
-import yaml
-import torch
-import math
 import os
-import torch.nn as nn
+from pathlib import Path
 
+import requests
+import yaml
 from timm.models.helpers import load_pretrained, load_custom_pretrained
-from timm.models.vision_transformer import default_cfgs, checkpoint_filter_fn
 from timm.models.registry import register_model
 from timm.models.vision_transformer import _create_vision_transformer
+from timm.models.vision_transformer import default_cfgs, checkpoint_filter_fn
+
+import segmenter_model.torch as ptu
+import torch
 from segmenter_model.decoder import MaskTransformer
 from segmenter_model.segmenter import Segmenter
-import segmenter_model.torch as ptu
-
 from segmenter_model.vit_dino import vit_small, VisionTransformer
 
 
@@ -48,14 +47,9 @@ def create_vit(model_cfg):
             model_cfg['drop_rate'] = model_cfg['dropout']
             model = vit_small(**model_cfg)
             # hard-coded for now, too lazy
-            ciirc_path = '/home/vobecant/PhD/weights/dino/dino_deitsmall16_pretrain.pth'
-            karolina_path = '/scratch/project/dd-21-20/pretrained_weights/dino/dino_deitsmall16_pretrain.pth'
-            if os.path.exists(ciirc_path):
-                pretrained_weights = ciirc_path
-            elif os.path.exists(karolina_path):
-                pretrained_weights = karolina_path
-            else:
-                raise Exception('DINO weights not found!')
+            pretrained_weights = 'dino_deitsmall16_pretrain.pth'
+            if not os.path.exists(pretrained_weights):
+                requests.get(pretrained_weights, allow_redirects=True)
             model.load_state_dict(torch.load(pretrained_weights), strict=True)
         else:
             model = torch.hub.load('facebookresearch/dino:main', backbone)
