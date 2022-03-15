@@ -369,7 +369,7 @@ def inference(
 
     # for im, im_metas in zip(ims, ims_metas):
     for im in ims:
-        im = im.to('cuda')
+        # im = im.to('cuda')
         if len(im.shape) == 3:
             im = im.unsqueeze(0)
         # im = resize(im, window_size)
