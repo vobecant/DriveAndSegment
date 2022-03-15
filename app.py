@@ -1,5 +1,3 @@
-import os
-
 import gradio as gr
 import numpy as np
 import requests
@@ -50,7 +48,7 @@ def download_file_from_google_drive(destination=WEIGHTS):
 
 def download_weights():
     # if not os.path.exists(WEIGHTS):
-    url = 'https://data.ciirc.cvut.cz/public/projects/2022DriveAndSegment/checkpoint_train_ep0_21.75miouHun.pth'
+    url = 'https://data.ciirc.cvut.cz/public/projects/2022DriveAndSegment/segmenter.pth'
     import urllib.request
     urllib.request.urlretrieve(url, WEIGHTS)
 
@@ -124,7 +122,7 @@ def get_transformations():
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
 
 
-download_file_from_google_drive()
+download_weights()
 model, window_size, window_stride = create_model()
 
 
