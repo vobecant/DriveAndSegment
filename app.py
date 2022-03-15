@@ -130,7 +130,7 @@ model, window_size, window_stride = create_model()
 
 def predict(input_img):
     input_img = Image.open(input_img)
-    transform = transforms.Compose([transforms.Resize(256, Image.BICUBIC), transforms.ToTensor()])
+    transform = get_transformations()
     input_img = transform(input_img)
     input_img = torch.unsqueeze(input_img, 0)
 

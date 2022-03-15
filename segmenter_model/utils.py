@@ -389,10 +389,6 @@ def inference(
                 seg_maps[i: i + WB] = model.forward(crops[i: i + WB], decoder_features=decoder_features,
                                                     encoder_features=encoder_features,
                                                     no_upsample=no_upsample)
-                # except:
-                #     print('Input of shape: {}'.format(crops[i:i + WB].shape))
-                #     assert False, "End after error."
-                # torch.cuda.empty_cache()
         windows["seg_maps"] = seg_maps
 
         im_seg_map = merge_windows(windows, window_size, ori_shape, no_softmax=decoder_features,
