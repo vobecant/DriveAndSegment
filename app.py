@@ -13,7 +13,8 @@ from segmenter_model.factory import create_segmenter
 from segmenter_model.fpn_picie import PanopticFPN
 from segmenter_model.utils import colorize_one, map2cs
 
-WEIGHTS = './weights/segmenter.pth'
+# WEIGHTS = './weights/segmenter.pth
+WEIGHTS = './weights/segmenter_nusc.pth'
 
 
 def download_file_from_google_drive(destination=WEIGHTS):

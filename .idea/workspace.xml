@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dd22f22-8223-4d55-99f9-57d1e00622d7" name="Default Changelist" comment="Initial commit.">
-      <change afterPath="$PROJECT_DIR$/examples/img2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/img3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/img4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +50,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1647350746642</updated>
-      <workItem from="1647350750956" duration="10175000" />
+      <workItem from="1647350750956" duration="10459000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1647352693910</created>
@@ -322,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647360852179</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Initial commit.">
+      <created>1647361256773</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1647361256773</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
