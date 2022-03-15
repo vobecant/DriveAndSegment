@@ -158,7 +158,7 @@ description = 'Gradio Demo accompanying paper "Drive&Segment: Unsupervised Seman
 # article = "<p style='text-align: center'><a href='TODO' target='_blank'>Project Page</a> | <a href='codelink' target='_blank'>Github</a></p>"
 examples = ['examples/img1.png']
 
-predict(examples[0])
+# predict(examples[0])
 
 iface = gr.Interface(predict, gr.inputs.Image(type='filepath'), "image", title=title, description=description,
                      examples=examples)
