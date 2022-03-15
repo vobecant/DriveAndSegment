@@ -1,5 +1,3 @@
-import os
-
 import gradio as gr
 import numpy as np
 import requests
@@ -75,8 +73,12 @@ def segment_segmenter(image, model, window_size, window_stride, encoder_features
 
 
 def remap(seg_pred, ignore=255):
-    mapping = {0: 0, 12: 1, 15: 2, 23: 3, 10: 4, 14: 5, 18: 6, 2: 7, 17: 8, 13: 9, 8: 10, 3: 11, 27: 12, 4: 13, 25: 14,
-               24: 15, 6: 16, 22: 17, 28: 18}
+    if 'nusc' in WEIGHTS.lower():
+        mapping = {0: 0, 13: 1, 2: 2, 7: 3, 17: 4, 20: 5, 8: 6, 12: 7, 26: 8, 14: 9, 22: 10, 11: 11, 6: 12, 27: 13,
+                   10: 14, 19: 15, 24: 16, 9: 17, 4: 18}
+    else:
+        mapping = {0: 0, 12: 1, 15: 2, 23: 3, 10: 4, 14: 5, 18: 6, 2: 7, 17: 8, 13: 9, 8: 10, 3: 11, 27: 12, 4: 13,
+                   25: 14, 24: 15, 6: 16, 22: 17, 28: 18}
     h, w = seg_pred.shape[-2:]
     seg_pred_remap = np.ones((h, w), dtype=np.uint8) * ignore
     for pseudo, gt in mapping.items():
@@ -155,8 +157,8 @@ def predict(input_img):
 
 
 title = "Drive&Segment"
-description = 'Gradio Demo accompanying paper "Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation"'
-# article = "<p style='text-align: center'><a href='TODO' target='_blank'>Project Page</a> | <a href='codelink' target='_blank'>Github</a></p>"
+description = 'Gradio Demo accompanying paper "Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation"\nBecause of the CPU-only inference, it might take up to 20s for large images.'
+article = "<p style='text-align: center'><a href='TODO' target='_blank'>Project Page</a> | <a href='codelink' target='_blank'>Github</a></p>"
 examples = ['examples/img1.jpg', 'examples/img2.jpeg']
 
 # predict(examples[0])
