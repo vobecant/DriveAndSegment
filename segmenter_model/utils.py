@@ -102,7 +102,7 @@ def get_colors(num_colors):
     return colors[:num_colors]
 
 
-def colorize_one(seg, ignore=None, colors=None, ncolors=32):
+def colorize_one(seg, ignore=255, colors=None, ncolors=32):
     unq = np.unique(seg)
     if ncolors is not None:
         ncolors = max(ncolors, max(unq))
