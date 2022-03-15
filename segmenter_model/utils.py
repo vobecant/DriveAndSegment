@@ -356,11 +356,7 @@ def inference(
         batch_size,
         decoder_features=False,
         encoder_features=False,
-        save2cpu=False,
         no_upsample=False,
-        debug_file=None,
-        im_rgb=None,
-        channel_first=False
 ):
     C = model.n_cls
     patch_size = model.patch_size
@@ -389,6 +385,7 @@ def inference(
         with torch.no_grad():
             for i in range(0, num_crops, WB):
                 # try:
+                print('Forward crop {}'.format(crops[i: i + WB].shape))
                 seg_maps[i: i + WB] = model.forward(crops[i: i + WB], decoder_features=decoder_features,
                                                     encoder_features=encoder_features,
                                                     no_upsample=no_upsample)
