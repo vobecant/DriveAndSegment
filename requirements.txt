@@ -1,0 +1,6 @@
+torch
+torchvision
+PIL
+timm
+yaml
+einops
