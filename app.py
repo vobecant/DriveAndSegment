@@ -50,10 +50,10 @@ def download_file_from_google_drive(destination=WEIGHTS):
 
 
 def download_weights():
-    if not os.path.exists(WEIGHTS):
-        url = 'https://data.ciirc.cvut.cz/public/projects/2022DriveAndSegment/segmenter.pth'
-        import urllib.request
-        urllib.request.urlretrieve(url, WEIGHTS)
+    # if not os.path.exists(WEIGHTS):
+    url = 'https://data.ciirc.cvut.cz/public/projects/2022DriveAndSegment/segmenter_nusc.pth'
+    import urllib.request
+    urllib.request.urlretrieve(url, WEIGHTS)
 
 
 def segment_segmenter(image, model, window_size, window_stride, encoder_features=False, decoder_features=False,
