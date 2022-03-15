@@ -385,7 +385,7 @@ def inference(
         with torch.no_grad():
             for i in range(0, num_crops, WB):
                 # try:
-                print('Forward crop {}'.format(crops[i: i + WB].shape))
+                # print('Forward crop {}'.format(crops[i: i + WB].shape))
                 seg_maps[i: i + WB] = model.forward(crops[i: i + WB], decoder_features=decoder_features,
                                                     encoder_features=encoder_features,
                                                     no_upsample=no_upsample)
