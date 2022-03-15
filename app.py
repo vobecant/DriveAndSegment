@@ -50,7 +50,7 @@ def download_file_from_google_drive(destination=WEIGHTS):
 
 def download_weights():
     # if not os.path.exists(WEIGHTS):
-    url = 'https://drive.google.com/file/d/1v6_d2KHzRROsjb_cgxU7jvmnGVDXeBia/view?usp=sharing'
+    url = 'https://data.ciirc.cvut.cz/public/projects/2022DriveAndSegment/checkpoint_train_ep0_21.75miouHun.pth'
     import urllib.request
     urllib.request.urlretrieve(url, WEIGHTS)
 
