@@ -3,11 +3,9 @@ import math
 # from segm.engine import seg2rgb
 from collections import namedtuple
 
-import cv2
 import numpy as np
 import torch.nn as nn
 import torch.nn.functional as F
-from PIL import Image
 from timm.models.layers import trunc_normal_
 
 import torch
@@ -333,18 +331,6 @@ def inference_picie(
                 seg_maps[i: i + WB] = probs
         windows["seg_maps"] = seg_maps
 
-        if debug_file is not None:
-            if isinstance(im_rgb, torch.Tensor):
-                im_rgb = im_rgb.detach().cpu().numpy()
-            if len(im_rgb.shape) == 4:
-                im_rgb = im_rgb[0]
-            h, w = im.shape[-2:]
-            im_rgb = cv2.resize(im_rgb, (w, h), interpolation=cv2.INTER_LINEAR)
-
-            crops_rgb = np.stack(
-                sliding_window(im_rgb[None, :], flip, window_size, window_stride, channels_first=channel_first).pop(
-                    "crop"))[:, 0]
-
         im_seg_map = merge_windows(windows, window_size, ori_shape, no_softmax=decoder_features,
                                    no_upsample=no_upsample, patch_size=None)
 
@@ -411,41 +397,6 @@ def inference(
                 #     assert False, "End after error."
                 # torch.cuda.empty_cache()
         windows["seg_maps"] = seg_maps
-
-        if debug_file is not None:
-            if isinstance(im_rgb, torch.Tensor):
-                im_rgb = im_rgb.detach().cpu().numpy()
-            if len(im_rgb.shape) == 4:
-                im_rgb = im_rgb[0]
-            h, w = im.shape[-2:]
-            im_rgb = cv2.resize(im_rgb, (w, h), interpolation=cv2.INTER_LINEAR)
-
-            crops_rgb = np.stack(
-                sliding_window(im_rgb[None, :], flip, window_size, window_stride, channels_first=channel_first).pop(
-                    "crop"))[:, 0]
-
-            windows_row = np.concatenate([w for w in crops_rgb], axis=1)
-            # print(windows_row)
-            try:
-                Image.fromarray(windows_row).save(debug_file)
-            except:
-                pass
-
-            suffix = debug_file[-4:]
-            debug_file = debug_file.replace(suffix, '_preds{}'.format(suffix))
-            windows_preds = seg_maps.argmax(dim=1).cpu().numpy()
-            windows_preds_row = np.concatenate([seg2rgb(wp, C, 255) for wp in windows_preds], axis=1)
-            windows_row_plus_preds = np.concatenate((windows_row, windows_preds_row), axis=0)
-            try:
-                Image.fromarray(windows_preds_row).save(debug_file)
-            except:
-                pass
-
-            debug_file = debug_file.replace(suffix, '_wImg{}'.format(suffix))
-            try:
-                Image.fromarray(windows_row_plus_preds).save(debug_file)
-            except:
-                pass
 
         im_seg_map = merge_windows(windows, window_size, ori_shape, no_softmax=decoder_features,
                                    no_upsample=no_upsample, patch_size=model.patch_size)
