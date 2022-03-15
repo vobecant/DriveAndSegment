@@ -1,6 +1,6 @@
 torch
 torchvision
-PIL
+pillow
 timm
 yaml
 einops
