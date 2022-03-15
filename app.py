@@ -14,6 +14,12 @@ from segmenter_model.utils import colorize_one, map2cs
 # WEIGHTS = './weights/segmenter.pth
 WEIGHTS = './weights/segmenter_nusc.pth'
 
+def blend_images(bg, fg, alpha=0.3):
+    fg = fg.convert('RGBA')
+    bg = bg.convert('RGBA')
+    blended = Image.blend(bg, fg, alpha=alpha)
+
+    return blended
 
 def download_file_from_google_drive(destination=WEIGHTS):
     id = '1v6_d2KHzRROsjb_cgxU7jvmnGVDXeBia'
@@ -132,9 +138,9 @@ model, window_size, window_stride = create_model()
 
 
 def predict(input_img):
-    input_img = Image.open(input_img)
+    input_img_pil = Image.open(input_img)
     transform = get_transformations()
-    input_img = transform(input_img)
+    input_img = transform(input_img_pil)
     input_img = torch.unsqueeze(input_img, 0)
 
     print('Loaded and prepaded image.')
@@ -152,8 +158,9 @@ def predict(input_img):
 
     # drawing_pseudo = transforms.ToPILImage()(drawing_pseudo)
     drawing_cs = transforms.ToPILImage()(drawing_cs)
+    drawing_cs_blend = blend_images(input_img_pil, drawing_cs)
     # return drawing_pseudo, drawing_cs
-    return drawing_cs
+    return drawing_cs_blend
 
 
 title = "Drive&Segment"
