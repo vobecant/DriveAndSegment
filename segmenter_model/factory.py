@@ -1,7 +1,6 @@
 import os
 from pathlib import Path
 
-import requests
 import yaml
 from timm.models.helpers import load_pretrained, load_custom_pretrained
 from timm.models.registry import register_model
@@ -49,7 +48,10 @@ def create_vit(model_cfg):
             # hard-coded for now, too lazy
             pretrained_weights = 'dino_deitsmall16_pretrain.pth'
             if not os.path.exists(pretrained_weights):
-                requests.get('https://dl.fbaipublicfiles.com/dino/dino_deitsmall16_pretrain/dino_deitsmall16_pretrain.pth', allow_redirects=True)
+                import urllib.request
+                urllib.request.urlretrieve(
+                    "https://dl.fbaipublicfiles.com/dino/dino_deitsmall16_pretrain/dino_deitsmall16_pretrain.pth",
+                    pretrained_weights)
             model.load_state_dict(torch.load(pretrained_weights), strict=True)
         else:
             model = torch.hub.load('facebookresearch/dino:main', backbone)
