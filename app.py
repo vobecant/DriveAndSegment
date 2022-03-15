@@ -182,7 +182,7 @@ examples = [['examples/img5.jpeg', True], ['examples/100.jpeg', True], ['example
 
 iface = gr.Interface(predict, [gr.inputs.Image(type='filepath'), gr.inputs.Checkbox(label="Cityscapes mapping")],
                      "image", title=title, description=description,
-                     examples=[examples, []])
+                     examples=examples)
 # iface = gr.Interface(predict, gr.inputs.Image(type='filepath'),
 #                      "image", title=title, description=description,
 #                      examples=examples)
