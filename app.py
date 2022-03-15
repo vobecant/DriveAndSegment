@@ -49,10 +49,10 @@ def download_file_from_google_drive(destination=WEIGHTS):
 
 
 def download_weights():
-    if not os.path.exists(WEIGHTS):
-        url = 'https://drive.google.com/file/d/1v6_d2KHzRROsjb_cgxU7jvmnGVDXeBia/view?usp=sharing'
-        import urllib.request
-        urllib.request.urlretrieve(url, WEIGHTS)
+    # if not os.path.exists(WEIGHTS):
+    url = 'https://drive.google.com/file/d/1v6_d2KHzRROsjb_cgxU7jvmnGVDXeBia/view?usp=sharing'
+    import urllib.request
+    urllib.request.urlretrieve(url, WEIGHTS)
 
 
 def segment_segmenter(image, model, window_size, window_stride, encoder_features=False, decoder_features=False,
