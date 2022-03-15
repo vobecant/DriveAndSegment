@@ -168,7 +168,7 @@ def predict(input_img):
 title = "Drive&Segment"
 description = 'Gradio Demo accompanying paper "Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation"\nBecause of the CPU-only inference, it might take up to 20s for large images.'
 # article = "<p style='text-align: center'><a href='TODO' target='_blank'>Project Page</a> | <a href='codelink' target='_blank'>Github</a></p>"
-examples = ['examples/100.jpeg', 'examples/39076.jpg', 'examples/img1.jpg']  # , 'examples/img2.jpeg']
+examples = ['examples/100.jpeg', 'examples/39076.jpeg', 'examples/img1.jpg']  # , 'examples/img2.jpeg']
 
 # predict(examples[0])
 
