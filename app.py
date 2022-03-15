@@ -141,7 +141,7 @@ def get_transformations():
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
 
 
-def predict(input_img):
+def predict(input_img, cs_mapping):
     input_img_pil = Image.open(input_img)
     transform = get_transformations()
     input_img = transform(input_img_pil)
@@ -163,18 +163,24 @@ def predict(input_img):
     # drawing_pseudo = transforms.ToPILImage()(drawing_pseudo)
     drawing_cs = transforms.ToPILImage()(drawing_cs).resize(input_img_pil.size)
     drawing_cs_blend = blend_images(input_img_pil, drawing_cs)
-    # return drawing_pseudo, drawing_cs
-    return drawing_cs_blend
+
+    if cs_mapping:
+        drawing = drawing_cs
+    else:
+        drawing = drawing_pseudo
+
+    return drawing
 
 
 title = "Drive&Segment"
-description = 'Gradio Demo accompanying paper "Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation"\nBecause of the CPU-only inference, it might take up to 20s for large images.'
+description = 'Gradio Demo accompanying paper "Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation"\nBecause of the CPU-only inference, it might take up to 20s for large images.\nRight now, I use the Segmenter model trained on nuScenes and with 256x256 patches (for the sake of speed).'
 # article = "<p style='text-align: center'><a href='TODO' target='_blank'>Project Page</a> | <a href='codelink' target='_blank'>Github</a></p>"
 examples = ['examples/img5.jpeg', 'examples/100.jpeg', 'examples/39076.jpeg', 'examples/img1.jpg']
 
-predict(examples[0])
+# predict(examples[0])
 
-iface = gr.Interface(predict, gr.inputs.Image(type='filepath'), "image", title=title, description=description,
+iface = gr.Interface(predict, [gr.inputs.Image(type='filepath'), gr.inputs.Checkbox(label="Cityscapes mapping")],
+                     "image", title=title, description=description,
                      examples=examples)
 
 iface.launch(debug=True, show_error=True)
