@@ -156,7 +156,7 @@ def predict(input_img):
 title = "Drive&Segment"
 description = 'Gradio Demo accompanying paper "Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation"'
 # article = "<p style='text-align: center'><a href='TODO' target='_blank'>Project Page</a> | <a href='codelink' target='_blank'>Github</a></p>"
-examples = [['examples/img1.jpg']]
+examples = ['examples/img1.jpg']
 
 predict(examples[0])
 
