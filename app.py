@@ -183,4 +183,4 @@ iface = gr.Interface(predict, [gr.inputs.Image(type='filepath'), gr.inputs.Check
                      "image", title=title, description=description,
                      examples=[examples, []])
 
-iface.launch(debug=True, show_error=True)
+iface.launch(show_error=True)
