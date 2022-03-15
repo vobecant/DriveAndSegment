@@ -88,7 +88,6 @@ def create_model(resnet=False):
     window_stride = variant['inference_kwargs']["window_stride"]
     dataset_kwargs = variant['dataset_kwargs']
     net_kwargs = variant["net_kwargs"]
-    net_kwargs['n_cls'] = dataset_kwargs['nlabels']
 
     dataset_kwargs = variant['dataset_kwargs']
 
