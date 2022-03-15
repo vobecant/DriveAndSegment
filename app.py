@@ -162,14 +162,15 @@ def predict(input_img, cs_mapping):
 
     # drawing_pseudo = transforms.ToPILImage()(drawing_pseudo)
     drawing_cs = transforms.ToPILImage()(drawing_cs).resize(input_img_pil.size)
-    drawing_cs_blend = blend_images(input_img_pil, drawing_cs)
 
     if cs_mapping:
         drawing = drawing_cs
     else:
         drawing = drawing_pseudo
 
-    return drawing
+    drawing_blend = blend_images(input_img_pil, drawing)
+
+    return drawing_blend
 
 
 title = "Drive&Segment"
