@@ -1,8 +1,8 @@
 ---
 title: DaS
-emoji: 📉
-colorFrom: green
-colorTo: indigo
+emoji: 💻
+colorFrom: pink
+colorTo: pink
 sdk: gradio
 sdk_version: 2.8.10
 app_file: app.py
