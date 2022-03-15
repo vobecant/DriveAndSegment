@@ -56,7 +56,7 @@ def download_weights():
 
 
 def segment_segmenter(image, model, window_size, window_stride, encoder_features=False, decoder_features=False,
-                      no_upsample=False, batch_size=2):
+                      no_upsample=False, batch_size=1):
     seg_pred = utils.inference(
         model,
         image,
