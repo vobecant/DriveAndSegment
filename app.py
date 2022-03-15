@@ -14,12 +14,14 @@ from segmenter_model.utils import colorize_one, map2cs
 # WEIGHTS = './weights/segmenter.pth
 WEIGHTS = './weights/segmenter_nusc.pth'
 
+
 def blend_images(bg, fg, alpha=0.3):
     fg = fg.convert('RGBA')
     bg = bg.convert('RGBA')
     blended = Image.blend(bg, fg, alpha=alpha)
 
     return blended
+
 
 def download_file_from_google_drive(destination=WEIGHTS):
     id = '1v6_d2KHzRROsjb_cgxU7jvmnGVDXeBia'
@@ -166,7 +168,7 @@ def predict(input_img):
 title = "Drive&Segment"
 description = 'Gradio Demo accompanying paper "Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation"\nBecause of the CPU-only inference, it might take up to 20s for large images.'
 # article = "<p style='text-align: center'><a href='TODO' target='_blank'>Project Page</a> | <a href='codelink' target='_blank'>Github</a></p>"
-examples = ['examples/img1.jpg']  # , 'examples/img2.jpeg']
+examples = ['examples/img1.jpg', 'examples/img100.jpeg']  # , 'examples/img2.jpeg']
 
 # predict(examples[0])
 
