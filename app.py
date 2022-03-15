@@ -1,3 +1,5 @@
+import os
+
 import gradio as gr
 import numpy as np
 import requests
@@ -44,6 +46,13 @@ def download_file_from_google_drive(destination=WEIGHTS):
         response = session.get(URL, params=params, stream=True)
 
     save_response_content(response, destination)
+
+
+def download_weights():
+    if not os.path.exists(WEIGHTS):
+        url = 'https://drive.google.com/file/d/1v6_d2KHzRROsjb_cgxU7jvmnGVDXeBia/view?usp=sharing'
+        import urllib.request
+        urllib.request.urlretrieve(url, WEIGHTS)
 
 
 def segment_segmenter(image, model, window_size, window_stride, encoder_features=False, decoder_features=False,
