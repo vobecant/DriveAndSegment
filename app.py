@@ -1,3 +1,5 @@
+import os
+
 import gradio as gr
 import numpy as np
 import requests
@@ -47,10 +49,10 @@ def download_file_from_google_drive(destination=WEIGHTS):
 
 
 def download_weights():
-    # if not os.path.exists(WEIGHTS):
-    url = 'https://data.ciirc.cvut.cz/public/projects/2022DriveAndSegment/segmenter.pth'
-    import urllib.request
-    urllib.request.urlretrieve(url, WEIGHTS)
+    if not os.path.exists(WEIGHTS):
+        url = 'https://data.ciirc.cvut.cz/public/projects/2022DriveAndSegment/segmenter.pth'
+        import urllib.request
+        urllib.request.urlretrieve(url, WEIGHTS)
 
 
 def segment_segmenter(image, model, window_size, window_stride, encoder_features=False, decoder_features=False,
@@ -139,9 +141,10 @@ def predict(input_img):
     drawing_pseudo = colorize_one(segmentation_remap)
     drawing_cs = map2cs(segmentation_remap)
 
-    drawing_pseudo = transforms.ToPILImage()(drawing_pseudo)
+    # drawing_pseudo = transforms.ToPILImage()(drawing_pseudo)
     drawing_cs = transforms.ToPILImage()(drawing_cs)
-    return drawing_pseudo, drawing_cs
+    # return drawing_pseudo, drawing_cs
+    return drawing_cs
 
 
 title = "Drive&Segment"
