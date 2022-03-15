@@ -4,3 +4,4 @@ pillow
 timm
 pyyaml
 einops
+opencv-python
