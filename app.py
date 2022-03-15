@@ -86,13 +86,8 @@ def create_model(resnet=False):
     # TODO: parse hyperparameters
     window_size = variant['inference_kwargs']["window_size"]
     window_stride = variant['inference_kwargs']["window_stride"]
-    dataset_kwargs = variant['dataset_kwargs']
-    net_kwargs = variant["net_kwargs"]
-
-    dataset_kwargs = variant['dataset_kwargs']
 
     net_kwargs = variant["net_kwargs"]
-    net_kwargs['n_cls'] = dataset_kwargs['nlabels']
     if not resnet:
         net_kwargs['decoder']['dropout'] = 0.
 
