@@ -2,20 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dd22f22-8223-4d55-99f9-57d1e00622d7" name="Default Changelist" comment="Initial commit.">
-      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/img1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/segmenter_model/backbone_picie.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/segmenter_model/blocks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/segmenter_model/decoder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/segmenter_model/factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/segmenter_model/fpn_picie.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/segmenter_model/picie_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/segmenter_model/resnet_dilated.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/segmenter_model/segmenter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/segmenter_model/torch.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/segmenter_model/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/segmenter_model/vit_dino.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +50,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1647350746642</updated>
-      <workItem from="1647350750956" duration="4327000" />
+      <workItem from="1647350750956" duration="4708000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1647352693910</created>
