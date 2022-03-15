@@ -108,6 +108,7 @@ def create_model(resnet=False):
     # TODO: parse hyperparameters
     window_size = variant['inference_kwargs']["window_size"]
     window_stride = variant['inference_kwargs']["window_stride"]
+    im_size = variant['inference_kwargs']["im_size"]
 
     net_kwargs = variant["net_kwargs"]
     if not resnet:
@@ -126,17 +127,18 @@ def create_model(resnet=False):
 
     model.eval()
 
-    return model, window_size, window_stride
+    return model, window_size, window_stride, im_size
+
+
+download_weights()
+model, window_size, window_stride, im_size = create_model()
 
 
 def get_transformations():
     return transforms.Compose([
         transforms.ToTensor(),
+        transforms.Resize(im_size),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
-
-
-download_weights()
-model, window_size, window_stride = create_model()
 
 
 def predict(input_img):
@@ -159,7 +161,7 @@ def predict(input_img):
     print('CS colors done.')
 
     # drawing_pseudo = transforms.ToPILImage()(drawing_pseudo)
-    drawing_cs = transforms.ToPILImage()(drawing_cs)
+    drawing_cs = transforms.ToPILImage()(drawing_cs).resize(input_img_pil.size)
     drawing_cs_blend = blend_images(input_img_pil, drawing_cs)
     # return drawing_pseudo, drawing_cs
     return drawing_cs_blend
@@ -168,9 +170,9 @@ def predict(input_img):
 title = "Drive&Segment"
 description = 'Gradio Demo accompanying paper "Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation"\nBecause of the CPU-only inference, it might take up to 20s for large images.'
 # article = "<p style='text-align: center'><a href='TODO' target='_blank'>Project Page</a> | <a href='codelink' target='_blank'>Github</a></p>"
-examples = ['examples/img5.jpeg','examples/100.jpeg', 'examples/39076.jpeg', 'examples/img1.jpg']  # , 'examples/img2.jpeg']
+examples = ['examples/img5.jpeg', 'examples/100.jpeg', 'examples/39076.jpeg', 'examples/img1.jpg']
 
-# predict(examples[0])
+predict(examples[0])
 
 iface = gr.Interface(predict, gr.inputs.Image(type='filepath'), "image", title=title, description=description,
                      examples=examples)
