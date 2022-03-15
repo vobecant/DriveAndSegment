@@ -108,7 +108,7 @@ def create_model(resnet=False):
 
     # TODO: load weights
     print('Load weights from {}'.format(weights_path))
-    weights = torch.load(weights_path)['model']
+    weights = torch.load(weights_path, map_location=torch.device('cpu'))['model']
     model.load_state_dict(weights, strict=True)
 
     model.eval()
