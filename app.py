@@ -160,14 +160,12 @@ def predict(input_img, cs_mapping):
     drawing_cs = map2cs(segmentation_remap)
     print('CS colors done.')
 
-    # drawing_pseudo = transforms.ToPILImage()(drawing_pseudo)
-    drawing_cs = transforms.ToPILImage()(drawing_cs).resize(input_img_pil.size)
-
     if cs_mapping:
         drawing = drawing_cs
     else:
         drawing = drawing_pseudo
 
+    drawing = transforms.ToPILImage()(drawing).resize(input_img_pil.size)
     drawing_blend = blend_images(input_img_pil, drawing)
 
     return drawing_blend
