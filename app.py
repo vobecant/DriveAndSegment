@@ -14,7 +14,9 @@ from segmenter_model.utils import colorize_one, map2cs
 WEIGHTS = './weights/segmenter.pth'
 
 
-def download_file_from_google_drive(id, destination):
+def download_file_from_google_drive(destination=WEIGHTS):
+    id = '1v6_d2KHzRROsjb_cgxU7jvmnGVDXeBia'
+
     def get_confirm_token(response):
         for key, value in response.cookies.items():
             if key.startswith('download_warning'):
@@ -113,6 +115,7 @@ def get_transformations():
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
 
 
+download_file_from_google_drive()
 model, window_size, window_stride = create_model()
 
 
