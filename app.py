@@ -175,16 +175,17 @@ def predict(input_img, cs_mapping):
 title = "Drive&Segment"
 description = 'Gradio Demo accompanying paper "Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation"\nBecause of the CPU-only inference, it might take up to 20s for large images.\nRight now, I use the Segmenter model trained on nuScenes and with 256x256 patches (for the sake of speed).'
 # article = "<p style='text-align: center'><a href='TODO' target='_blank'>Project Page</a> | <a href='codelink' target='_blank'>Github</a></p>"
-examples = ['examples/img5.jpeg', 'examples/100.jpeg', 'examples/39076.jpeg', 'examples/img1.jpg']
+examples = [['examples/img5.jpeg', True], ['examples/100.jpeg', True], ['examples/39076.jpeg', True],
+            ['examples/img1.jpg', True]]
 
 # predict(examples[0])
 
 iface = gr.Interface(predict, [gr.inputs.Image(type='filepath'), gr.inputs.Checkbox(label="Cityscapes mapping")],
                      "image", title=title, description=description,
                      examples=[examples, []])
-iface = gr.Interface(predict, gr.inputs.Image(type='filepath'),
-                     "image", title=title, description=description,
-                     examples=examples)
+# iface = gr.Interface(predict, gr.inputs.Image(type='filepath'),
+#                      "image", title=title, description=description,
+#                      examples=examples)
 
 # iface.launch(show_error=True, share=True)
 iface.launch(show_error=True)
