@@ -74,13 +74,13 @@ def remap(seg_pred, ignore=255):
 
 
 def merge_images(images):
-    images = [im.convert('RGBA') for im in images]
+    images = [im.convert('RGB') for im in images]
     widths, heights = zip(*(i.size for i in images))
 
     total_width = sum(widths)
     max_height = max(heights)
 
-    new_im = Image.new('RGBA', (total_width, max_height))
+    new_im = Image.new('RGB', (total_width, max_height))
 
     x_offset = 0
     for im in images:
