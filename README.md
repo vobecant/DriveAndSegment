@@ -73,6 +73,12 @@ algorithm.
 
 Please, refer to `requirements.txt`
 
+To create and run a virtual environment with the required packages, you can run:
+```
+conda create --name DaS --file requirements.txt
+conda activate DaS
+```
+
 ### 🚀 Inference
 
 We provide our Segmenter model trained on the nuScenes dataset.
