@@ -168,6 +168,14 @@ def predict(input_img_path, model, im_size, window_size, window_stride, cuda, al
     return input_img_pil, drawing_blend_pseudo, drawing_blend_cs
 
 
+def show_outputs(images):
+    drawing_merged = merge_images(images)
+    plt.imshow(drawing_merged)
+    plt.axis('off')
+    plt.tight_layout()
+    plt.show()
+
+
 @click.command(help="")
 @click.option("--input-path", type=str, default=None,
               help="Path to an image file or to a directory directory with images.")
