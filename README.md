@@ -18,7 +18,9 @@
 <h2 align="center">
   <a href="#">project page</a> |
   <a href="#">arXiv</a> |
-  <a href="https://huggingface.co/spaces/vobecant/DaS">Gradio</a>
+  <a href="https://huggingface.co/spaces/vobecant/DaS">Gradio</a> |
+  <a href="https://colab.research.google.com/drive/126tBVYbt1s0STyv8DKhmLoHKpvWcv33H?usp=sharing">Colab</a> |
+  <a href="#">video</a> 
 </h2>
 
 # 🚙📷 Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation
