@@ -15,19 +15,26 @@
   </a>
 </p>
 
+<h2 align="center">
+  <a href="#">project page</a> |
+  <a href="#">arXiv</a> |
+  <a href="https://huggingface.co/spaces/vobecant/DaS">Gradio</a>
+</h2>
+
 # 🚙📷 Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation
 
 This project hosts the code for inference of the Drive&Segment for unsupervised image segmentation of urban scenes.
 
 > [**Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation**](TBD)            
-> Antonin Vobecky, David Hurych, Oriane Siméoni, Spyros Gidaris, Andrei Bursuc, Patrick Pérez, and Josef Sivic
+> [Antonin Vobecky](https://vobecant.github.io/), [David Hurych](https://scholar.google.com/citations?hl=en&user=XY1PVwYAAAAJ), [Oriane Siméoni](https://osimeoni.github.io/), [Spyros Gidaris](https://scholar.google.fr/citations?user=7atfg7EAAAAJ&hl=en), [Andrei Bursuc](https://abursuc.github.io/), [Patrick Pérez](https://ptrckprz.github.io/), and [Josef Sivic](https://people.ciirc.cvut.cz/~sivic/)
 >
 > *arXiv preprint ([arXiv XYZ.xyz](TBD))*
 
 **Table of Contents**
-- [Highlights](https://github.com/vobecant/DriveAndSegment#-highlights)
-- [Examples](https://github.com/vobecant/DriveAndSegment#-examples)
-- [Running the models](https://github.com/vobecant/DriveAndSegment#-running-the-models)
+- [Highlights](#-highlights)
+- [Examples](#-examples)
+- [Running the models](#-running-the-models)
+- [Results](#-results)
 - [Citation](#-citation)
 
 ![teaser](sources/teaser.png)
@@ -96,10 +103,25 @@ them by hand, please place them to the `./weights` folder.
 
 ### Waymo Open model
 
-Due to the Waymo Open dataset licence terms, we cannot openly share the trained weights. If you are interested in using
+Due to the Waymo Open dataset license terms, we cannot openly share the trained weights. If you are interested in using
 the model trained on the Waymo Open dataset, please register at
 the [Waymo Open](https://waymo.com/intl/en_us/dataset-download-terms/) and send the confirmation of your agreement to
-the licence terms to the [authors](mailto:antonin.vobecky@cvut.cz).
+the license terms to the [authors](mailto:antonin.vobecky@cvut.cz).
+
+## 📈 Results
+In the table below, we report the results of our best model (Segmenter trained on Waymo Open dataset) evaluated in the unsupervised setup (i.e., by obtaining mapping between pseudo- and ground-truth classes by Hungarian algorithm).
+
+| Dataset  | mIoU |
+| ------------- | ------------- |
+| Cityscapes (19 cls)  | 21.8  |
+| Cityscapes (27 cls)  | 15.3  |
+| Dark Zurich  | 14.2  |
+| Nighttime Driving  | 18.9  |
+| ACDC (night)  | 13.8 |
+| ACDC (fog)  | 14.5 |
+| ACDC (rain)  | 14.9 |
+| ACDC (snow)  | 14.6 |
+| ACDC (mean)   | 16.7  |
 
 ## 📖 Citation
 Please consider citing our paper in your publications if the project helps your research. BibTeX reference is as follows.
