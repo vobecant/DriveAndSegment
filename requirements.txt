@@ -1,4 +1,4 @@
-torch
+pytorch
 torchvision
 pillow
 timm

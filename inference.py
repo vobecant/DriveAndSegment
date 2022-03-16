@@ -152,7 +152,7 @@ def predict(input_img_path, model, im_size, window_size, window_stride, cuda, al
     with torch.no_grad():
         batch_size = 8 if cuda else 1
         segmentation = segment_segmenter(input_img, model, window_size, window_stride,
-                                         batch_size=batch_size).squeeze().detach()
+                                         batch_size=batch_size).squeeze().detach().cpu()
         segmentation_remap = remap(segmentation)
 
     drawing_pseudo = colorize_one(segmentation_remap)
