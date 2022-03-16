@@ -20,7 +20,7 @@ WEIGHTS = './weights/segmenter_nusc.pth'
 def blend_images(bg, fg, alpha=0.3):
     fg = fg.convert('RGBA')
     bg = bg.convert('RGBA')
-    blended = Image.blend(bg, fg, alpha=alpha)
+    blended = Image.blend(bg, fg, alpha=alpha).convert('RGB')
 
     return blended
 
