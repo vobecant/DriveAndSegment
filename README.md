@@ -1,13 +1,7 @@
 <h1 align="center">Welcome to the code for Drive&Segment 👋</h1>
 
 <p align="center">
-
-[comment]: <> (  <a href="https://www.npmjs.com/package/readme-md-generator">)
-
-[comment]: <> (    <img alt="downloads" src="https://img.shields.io/npm/dm/readme-md-generator.svg?color=blue" target="_blank" />)
-
-[comment]: <> (  </a>)
-  <a href="TBD">
+ <a href="TBD">
     <img alt="Project Page" src="https://img.shields.io/badge/Project Page-Open-green.svg" target="_blank" />
   </a>
   <a href="https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE">
@@ -30,15 +24,22 @@ This project hosts the code for inference of the Drive&Segment for unsupervised 
 >
 > *arXiv preprint ([arXiv XYZ.xyz](TBD))*
 
-![teaser](teaser.png)
+**Table of Contents**
+- [Highlights](https://github.com/vobecant/DriveAndSegment#-highlights)
+- [Examples](https://github.com/vobecant/DriveAndSegment#-examples)
+- [Running the models](https://github.com/vobecant/DriveAndSegment#-running-the-models)
+- [Citation](#-citation)
+
+![teaser](sources/teaser.png)
 
 ## 💫 Highlights
 
-- **A:**
+- 🚫🔬 **Unsupervised semantic segmentation:** Drive&Segments proposes learning semantic segmentation in urban scenes without any manual annotation, just from
+the raw non-curated data collected by cars which, equipped with 📷 cameras and 💥 LiDAR sensors.
 - 📷💥 **Multi-modal training:** During the train time our method takes 📷 images and 💥 LiDAR scans as an input, and
-  ... *Mention datasets.*
-- 📷 **Image-only inference:** Drive&Segment predicts ...
-- 🏆 **State-of-the-art performance:** Our best single model based on Segmenter architecture achieves **X%** in mIoU on
+  learns a semantic segmentation model *without using manual annotations*.
+- 📷 **Image-only inference:** During the inference time, Drive&Segments takes *only images* as an input.
+- 🏆 **State-of-the-art performance:** Our best single model based on Segmenter architecture achieves **21.8%** in mIoU on
   Cityscapes (without any fine-tuning).
 - 🚀 **Gradio Application**: We provide an interactive [Gradio application](https://huggingface.co/spaces/vobecant/DaS)
   so that everyone can try our model.
@@ -99,3 +100,13 @@ Due to the Waymo Open dataset licence terms, we cannot openly share the trained 
 the model trained on the Waymo Open dataset, please register at
 the [Waymo Open](https://waymo.com/intl/en_us/dataset-download-terms/) and send the confirmation of your agreement to
 the licence terms to the [authors](mailto:antonin.vobecky@cvut.cz).
+
+## 📖 Citation
+Please consider citing our paper in your publications if the project helps your research. BibTeX reference is as follows.
+```
+@article{XY,
+  title     =  {},
+  author    =  {},
+  booktitle =  {arXiv preprint},
+  year      =  {2022}
+}
