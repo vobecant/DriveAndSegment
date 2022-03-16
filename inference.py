@@ -14,7 +14,7 @@ from segmenter_model.factory import create_segmenter
 from segmenter_model.fpn_picie import PanopticFPN
 from segmenter_model.utils import colorize_one, map2cs
 
-# WEIGHTS = './weights/segmenter_waymo.pth
+ALPHA = 0.5
 WEIGHTS = './weights/segmenter_nusc.pth'
 
 
@@ -142,7 +142,7 @@ def get_transformations(im_size):
     return transforms.Compose(trans_list)
 
 
-def predict(input_img_path, model, im_size, window_size, window_stride, cuda, alpha):
+def predict(input_img_path, model, im_size, window_size, window_stride, cuda, alpha=ALPHA):
     input_img_pil = Image.open(input_img_path)
     transform = get_transformations(im_size)
     input_img = transform(input_img_pil)
