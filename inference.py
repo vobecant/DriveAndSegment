@@ -1,6 +1,7 @@
 import os
 
 import click
+import matplotlib.pyplot as plt
 import numpy as np
 import torch
 import yaml
@@ -174,7 +175,8 @@ def predict(input_img_path, model, im_size, window_size, window_stride, cuda, al
               help="Path to an output directory for saving the outputs. Optional.")
 @click.option("--alpha", type=float, default=0.3, help="Value of alpha used for blending.")
 @click.option("--cuda", default=False, is_flag=True, help='Use GPU. It is strongly recommended to do so.')
-def main(input_path, output_dir, alpha, cuda):
+@click.option("--show", default=False, is_flag=True, help='Visualize the output.')
+def main(input_path, output_dir, alpha, cuda, show):
     # download resources
     download_weights()
     model, window_size, window_stride, im_size = create_model(cuda)
@@ -196,21 +198,29 @@ def main(input_path, output_dir, alpha, cuda):
         input_img_pil, drawing_blend_pseudo, drawing_blend_cs = predict(path, model, im_size, window_size,
                                                                         window_stride, cuda, alpha)
 
-        if output_dir is not None:
+        if output_dir is not None or show:
             fname, ext = fname.split('.')
 
-            fname_pseudo = '{}_pseudo.jpg'.format(fname)
-            fname_cs = '{}_cs.jpg'.format(fname)
-            fname_all = '{}_all.jpg'.format(fname)
-
-            output_path_pseudo = os.path.join(output_dir, fname_pseudo)
-            output_path_cs = os.path.join(output_dir, fname_cs)
-            output_path_all = os.path.join(output_dir, fname_all)
-
-            drawing_blend_pseudo.save(output_path_pseudo)
-            drawing_blend_cs.save(output_path_cs)
             drawing_merged = merge_images([input_img_pil, drawing_blend_pseudo, drawing_blend_cs])
-            drawing_merged.save(output_path_all)
+
+            if output_dir is not None:
+                fname_pseudo = '{}_pseudo.jpg'.format(fname)
+                fname_cs = '{}_cs.jpg'.format(fname)
+                fname_all = '{}_all.jpg'.format(fname)
+
+                output_path_pseudo = os.path.join(output_dir, fname_pseudo)
+                output_path_cs = os.path.join(output_dir, fname_cs)
+                output_path_all = os.path.join(output_dir, fname_all)
+
+                drawing_blend_pseudo.save(output_path_pseudo)
+                drawing_blend_cs.save(output_path_cs)
+                drawing_merged.save(output_path_all)
+
+            if show:
+                plt.imshow(drawing_merged)
+                plt.axis('off')
+                plt.tight_layout()
+                plt.show()
 
 
 if __name__ == '__main__':
