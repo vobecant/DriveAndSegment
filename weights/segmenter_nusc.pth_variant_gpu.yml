@@ -1,0 +1,36 @@
+dataset_kwargs:
+  window_size: 512
+  window_stride: 384
+debug: false
+inference_kwargs:
+  im_size: 1024
+  window_size: 512
+  window_stride: 128
+net_kwargs:
+  backbone: dino_vits16
+  d_model: 384
+  decoder:
+    drop_path_rate: 0.0
+    dropout: 0.1
+    n_cls: 31
+    n_layers: 1
+    name: mask_transformer
+  distilled: false
+  drop_path_rate: 0.1
+  dropout: 0.0
+  image_size: !!python/tuple
+    - 512
+    - 512
+  n_cls: 31
+  n_heads: 3
+  n_layers: 12
+  normalization: deit
+  patch_size: 16
+val_dataset_kwargs:
+  batch_size: 1
+  crop_size: 512
+  dataset: cityscapes
+  image_size: 1024
+  normalization: deit
+  num_workers: 10
+  split: val
