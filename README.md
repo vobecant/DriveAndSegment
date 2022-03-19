@@ -114,7 +114,7 @@ them by hand, please place them to the `./weights` folder.
 Due to the Waymo Open dataset license terms, we cannot openly share the trained weights. If you are interested in using
 the model trained on the Waymo Open dataset, please register at
 the [Waymo Open](https://waymo.com/intl/en_us/dataset-download-terms/) and send the confirmation of your agreement to
-the license terms to the [authors](mailto:antonin.vobecky@cvut.cz).
+the license terms to the authors (`antonin (dot) vobecky (at) cvut (dot) cz`).
 
 ## 📈 Results
 In the table below, we report the results of our best model (Segmenter trained on Waymo Open dataset) evaluated in the unsupervised setup (i.e., by obtaining mapping between pseudo- and ground-truth classes by Hungarian algorithm).
