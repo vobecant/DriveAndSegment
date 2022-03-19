@@ -1,7 +1,7 @@
 <h1 align="center">Welcome to the code for Drive&Segment 👋</h1>
 
 <p align="center">
- <a href="TBD">
+ <a href="https://vobecant.github.io/DriveAndSegment">
     <img alt="Project Page" src="https://img.shields.io/badge/Project Page-Open-green.svg" target="_blank" />
   </a>
   <a href="https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE">
@@ -16,7 +16,7 @@
 </p>
 
 <h2 align="center">
-  <a href="#">project page</a> |
+  <a href="https://vobecant.github.io/DriveAndSegment">project page</a> |
   <a href="#">arXiv</a> |
   <a href="https://huggingface.co/spaces/vobecant/DaS">Gradio</a> |
   <a href="https://colab.research.google.com/drive/126tBVYbt1s0STyv8DKhmLoHKpvWcv33H?usp=sharing">Colab</a> |
