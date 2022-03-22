@@ -127,7 +127,7 @@
                   <a href="https://huggingface.co/spaces/vobecant/DaS"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
-                      <i class="U+1F917"></i>
+                      <i class="fa fa-gamepad"></i>
                     </span>
                     <span>Gradio</span>
                   </a>
@@ -138,7 +138,7 @@
                   <a href="https://colab.research.google.com/drive/126tBVYbt1s0STyv8DKhmLoHKpvWcv33H?usp=sharing"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
-                      <i class="U+1F917"></i>
+                      <i class="fab fa-google"></i>
                     </span>
                     <span>Colab</span>
                   </a>
@@ -187,11 +187,15 @@
                         demonstrate significant improvements compared to the current state of the art on this problem.
                     </p>
                 </div>
+                <div>
+                    <img class="round" style="width:850px" src="./sources/teaser.png"/>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
+<hr>
 
 <section class="section">
     <div class="container is-max-desktop">
@@ -202,80 +206,35 @@
         </div>
         <div class="columns is-centered">
 
-            <!-- Horse on the air -->
-            <div class="column">
-                <div class="content">
-                    <h2 class="title is-3">A horse in the air</h2>
-                    <p>
-                        <a href="https://www.reddit.com/r/GamePhysics/comments/9rqabp/red_dead_redemption_2_things_you_find_in_rdr2/"
-                           target="_blank">Video <i class="fas fa-external-link-alt"></i></a>
-                        identified by our approach with the bug query '<i>A horse in the air</i>' form Red Dead
-                        Redemption 2.
-                    </p>
-                    <video id="dollyzoom" autoplay="" controls="" muted="" loop="" height="100%">
-                        <source src="https://asgaardlab.github.io/CLIPxGamePhysics/static/videos/9rqabp.mp4"
-                                type="video/mp4">
-                    </video>
-                </div>
-            </div>
-            <!--/ Horse on the air -->
-
-            <!-- A person stuck in a barrel -->
-            <div class="column">
-                <div class="content">
-                    <h2 class="title is-3">A person stuck in a barrel</h2>
-                    <p>
-                        <a href="https://www.reddit.com/r/GamePhysics/comments/g5pm35/skyrim_a_fabulous_death/"
-                           target="_blank">Video <i class="fas fa-external-link-alt"></i></a> of '<i>A
-                        person stuck in a barrel</i>' from The Elder Scrolls V: Skyrim.
-                    </p>
-                    <video id="dollyzoom" autoplay="" controls="" muted="" loop="" height="100%">
-                        <source src="https://asgaardlab.github.io/CLIPxGamePhysics/static/videos/g5pm35.mp4"
-                                type="video/mp4">
-                    </video>
-                </div>
-            </div>
-            <!--/ A person stuck in a barrel -->
-
+                    <img class="round" style="width:400px" src="./sources/video128_blend03_v2_10fps_640px_lanczos.gif"/>
+        </div>
+        <br>
+        <div class="columns is-centered">
+                    <img class="round" style="width:400px" src="./sources/video_stuttgart00_remap_blended03_20fps_crop.gif"/>
+                    <img class="round" style="width:400px" src="./sources/video_stuttgart01_remap_blended03_20fps_crop2.gif"/>
 
         </div>
-        <div class="columns is-centered">
-            <!-- A car in a vertical position -->
-            <div class="column">
-                <div class="content">
-                    <h2 class="title is-3">A car in a vertical position</h2>
-                    <p>
-                        <a href="https://www.reddit.com/r/GamePhysics/comments/6xplqg/grand_theft_auto_v_allllrighty_then/"
-                           target="_blank">Video <i class="fas fa-external-link-alt"></i></a>
-                        identified by our approach with the bug query '<i>A car in a vertical position</i>' form Grand
-                        Theft Auto
-                        V.
-                    </p>
-                    <video id="dollyzoom" autoplay="" controls="" muted="" loop="" height="100%">
-                        <source src="https://asgaardlab.github.io/CLIPxGamePhysics/static/videos/6xplqg.mp4"
-                                type="video/mp4">
-                    </video>
-                </div>
-            </div>
-            <!--/ A car in a vertical position -->
 
-            <!-- A car stuck in a tree -->
-            <div class="column">
-                <div class="content">
-                    <h2 class="title is-3">A car stuck in a tree</h2>
+        <div class="content has-text-justified">
                     <p>
-                        <a href="https://www.reddit.com/r/GamePhysics/comments/4jirzj/gtav_tree_car/" target="_blank">Video
-                            <i class="fas fa-external-link-alt"></i></a> identified by our approach with the bug query
-                        of '<i>A car
-                        stuck in a tree</i>' from Grand Theft Auto V.
+                    <b>Qualitative results.</b>
+                <i>Top:</i> An example of pseudo segmentation, i.e., the output of our method where the classes are not mapped to the target ground-truth classes.
+                <i>Bottom:</i> Two videos from the Cityscapes dataset. To get the pseudo -> ground-truth mapping, we apply the Hungarian algorithm.
                     </p>
-                    <video id="dollyzoom" autoplay="" controls="" muted="" loop="" height="100%">
-                        <source src="https://asgaardlab.github.io/CLIPxGamePhysics/static/videos/4jirzj.mp4"
-                                type="video/mp4">
-                    </video>
                 </div>
+
+        </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Explanatory video</h2>
             </div>
-            <!--/ A car stuck in a tree -->
+        </div>
+        <div class="columns is-centered">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/B9LK-Fxu7ao" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 </section>
 
@@ -285,7 +244,52 @@
         <!-- Demo. -->
         <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
-                <h2 class="title is-3">Live Demo</h2>
+                <h2 class="title is-2">Code</h2>
+                <p> We provide inference code of our method on GitHub. Furthermore, to show our method, we provide Gradio demo (try below) and Colab notebook.</p>
+                                            <!-- Code Link. -->
+                            <span class="link-block">
+                  <a href="https://github.com/vobecant/DriveAndSegment"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                             <!-- Code Link. -->
+                            <span class="link-block">
+                  <a href="https://huggingface.co/spaces/vobecant/DaS"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fa fa-gamepad"></i>
+                    </span>
+                    <span>Gradio</span>
+                  </a>
+                </span>
+
+                            <!-- Code Link. -->
+                            <span class="link-block">
+                  <a href="https://colab.research.google.com/drive/126tBVYbt1s0STyv8DKhmLoHKpvWcv33H?usp=sharing"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-google"></i>
+                    </span>
+                    <span>Colab</span>
+                  </a>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Demo. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h3 class="title is-3">Live Demo</h3>
                 <p> If the Huggingface demo below is not loading properly for you, please visit this <a
                         href="https://huggingface.co/spaces/vobecant/DaS" target="_blank">link
                     <i class="fas fa-external-link-alt"></i></a>. </p>
