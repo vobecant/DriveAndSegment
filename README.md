@@ -14,10 +14,13 @@
     <img alt="Gradio App" src="https://img.shields.io/badge/Gradio App-Open%20In%20Spaces-blue.svg" target="_blank" />
   </a>
   	
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/drive-segment-unsupervised-semantic/unsupervised-semantic-segmentation-on-dark)](https://paperswithcode.com/sota/unsupervised-semantic-segmentation-on-dark?p=drive-segment-unsupervised-semantic)	
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/drive-segment-unsupervised-semantic/unsupervised-semantic-segmentation-on-2)](https://paperswithcode.com/sota/unsupervised-semantic-segmentation-on-2?p=drive-segment-unsupervised-semantic)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/drive-segment-unsupervised-semantic/unsupervised-semantic-segmentation-on-1)](https://paperswithcode.com/sota/unsupervised-semantic-segmentation-on-1?p=drive-segment-unsupervised-semantic)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/drive-segment-unsupervised-semantic/unsupervised-semantic-segmentation-on-acdc)](https://paperswithcode.com/sota/unsupervised-semantic-segmentation-on-acdc?p=drive-segment-unsupervised-semantic)
+[comment]: <> ([![PWC]&#40;https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/drive-segment-unsupervised-semantic/unsupervised-semantic-segmentation-on-dark&#41;]&#40;https://paperswithcode.com/sota/unsupervised-semantic-segmentation-on-dark?p=drive-segment-unsupervised-semantic&#41;	)
+
+[comment]: <> ([![PWC]&#40;https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/drive-segment-unsupervised-semantic/unsupervised-semantic-segmentation-on-2&#41;]&#40;https://paperswithcode.com/sota/unsupervised-semantic-segmentation-on-2?p=drive-segment-unsupervised-semantic&#41;)
+
+[comment]: <> ([![PWC]&#40;https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/drive-segment-unsupervised-semantic/unsupervised-semantic-segmentation-on-1&#41;]&#40;https://paperswithcode.com/sota/unsupervised-semantic-segmentation-on-1?p=drive-segment-unsupervised-semantic&#41;)
+
+[comment]: <> ([![PWC]&#40;https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/drive-segment-unsupervised-semantic/unsupervised-semantic-segmentation-on-acdc&#41;]&#40;https://paperswithcode.com/sota/unsupervised-semantic-segmentation-on-acdc?p=drive-segment-unsupervised-semantic&#41;)
 
 </p>
 
