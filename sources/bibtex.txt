@@ -1,6 +1,6 @@
-@article{XY,
-  title     =  {},
-  author    =  {},
-  booktitle =  {arXiv preprint},
-  year      =  {2022}
+@article{vobecky2022drivesegment,
+  title={Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation},
+  author={Antonin Vobecky and David Hurych and Oriane Siméoni and Spyros Gidaris and Andrei Bursuc and Patrick Pérez and Josef Sivic},
+  journal={arXiv preprint arXiv:2203.11160},
+  year={2022}
 }

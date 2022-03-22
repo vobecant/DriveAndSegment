@@ -146,10 +146,10 @@ In the table below, we report the results of our best model (Segmenter trained o
 ## 📖 Citation
 Please consider citing our paper in your publications if the project helps your research. BibTeX reference is as follows.
 ```
-@article{XY,
-  title     =  {},
-  author    =  {},
-  booktitle =  {arXiv preprint},
-  year      =  {2022}
+@article{vobecky2022drivesegment,
+  title={Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation},
+  author={Antonin Vobecky and David Hurych and Oriane Siméoni and Spyros Gidaris and Andrei Bursuc and Patrick Pérez and Josef Sivic},
+  journal={arXiv preprint arXiv:2203.11160},
+  year={2022}
 }
 ```
