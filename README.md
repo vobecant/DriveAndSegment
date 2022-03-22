@@ -13,11 +13,17 @@
   <a href="https://huggingface.co/spaces/vobecant/DaS">
     <img alt="Gradio App" src="https://img.shields.io/badge/Gradio App-Open%20In%20Spaces-blue.svg" target="_blank" />
   </a>
+  	
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/drive-segment-unsupervised-semantic/unsupervised-semantic-segmentation-on-dark)](https://paperswithcode.com/sota/unsupervised-semantic-segmentation-on-dark?p=drive-segment-unsupervised-semantic)	
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/drive-segment-unsupervised-semantic/unsupervised-semantic-segmentation-on-2)](https://paperswithcode.com/sota/unsupervised-semantic-segmentation-on-2?p=drive-segment-unsupervised-semantic)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/drive-segment-unsupervised-semantic/unsupervised-semantic-segmentation-on-1)](https://paperswithcode.com/sota/unsupervised-semantic-segmentation-on-1?p=drive-segment-unsupervised-semantic)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/drive-segment-unsupervised-semantic/unsupervised-semantic-segmentation-on-acdc)](https://paperswithcode.com/sota/unsupervised-semantic-segmentation-on-acdc?p=drive-segment-unsupervised-semantic)
+
 </p>
 
 <h2 align="center">
   <a href="https://vobecant.github.io/DriveAndSegment">project page</a> |
-  <a href="#">arXiv</a> |
+  <a href="http://arxiv.org/abs/2203.11160">arXiv</a> |
   <a href="https://huggingface.co/spaces/vobecant/DaS">Gradio</a> |
   <a href="https://colab.research.google.com/drive/126tBVYbt1s0STyv8DKhmLoHKpvWcv33H?usp=sharing">Colab</a> |
   <a href="https://www.youtube.com/watch?v=B9LK-Fxu7ao">video</a> 
@@ -27,10 +33,10 @@
 
 This project hosts the code for inference of the Drive&Segment for unsupervised image segmentation of urban scenes.
 
-> [**Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation**](TBD)            
+> [**Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation**](http://arxiv.org/abs/2203.11160)            
 > [Antonin Vobecky](https://vobecant.github.io/), [David Hurych](https://scholar.google.com/citations?hl=en&user=XY1PVwYAAAAJ), [Oriane Siméoni](https://osimeoni.github.io/), [Spyros Gidaris](https://scholar.google.fr/citations?user=7atfg7EAAAAJ&hl=en), [Andrei Bursuc](https://abursuc.github.io/), [Patrick Pérez](https://ptrckprz.github.io/), and [Josef Sivic](https://people.ciirc.cvut.cz/~sivic/)
 >
-> *arXiv preprint ([arXiv XYZ.xyz](TBD))*
+> *arXiv preprint ([arXiv 2203.11160](http://arxiv.org/abs/2203.11160))*
 
 **Table of Contents**
 - [Highlights](#-highlights)
@@ -131,6 +137,12 @@ In the table below, we report the results of our best model (Segmenter trained o
 | ACDC (snow)  | 14.6 |
 | ACDC (mean)   | 16.7  |
 
+### Current standings:
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/drive-segment-unsupervised-semantic/unsupervised-semantic-segmentation-on-dark)](https://paperswithcode.com/sota/unsupervised-semantic-segmentation-on-dark?p=drive-segment-unsupervised-semantic)	
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/drive-segment-unsupervised-semantic/unsupervised-semantic-segmentation-on-2)](https://paperswithcode.com/sota/unsupervised-semantic-segmentation-on-2?p=drive-segment-unsupervised-semantic)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/drive-segment-unsupervised-semantic/unsupervised-semantic-segmentation-on-1)](https://paperswithcode.com/sota/unsupervised-semantic-segmentation-on-1?p=drive-segment-unsupervised-semantic)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/drive-segment-unsupervised-semantic/unsupervised-semantic-segmentation-on-acdc)](https://paperswithcode.com/sota/unsupervised-semantic-segmentation-on-acdc?p=drive-segment-unsupervised-semantic)
+
 ## 📖 Citation
 Please consider citing our paper in your publications if the project helps your research. BibTeX reference is as follows.
 ```
@@ -140,3 +152,4 @@ Please consider citing our paper in your publications if the project helps your 
   booktitle =  {arXiv preprint},
   year      =  {2022}
 }
+```
