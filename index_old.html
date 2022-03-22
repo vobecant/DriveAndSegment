@@ -1,0 +1,453 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+<meta charset="UTF-8">
+
+<style type="text/css">
+    body {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight: 300;
+        font-size: 18px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1100px;
+    }
+
+    h1 {
+        font-weight: 300;
+    }
+
+    .disclaimerbox {
+        background-color: #eee;
+        border: 1px solid #eeeeee;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        padding: 20px;
+    }
+
+    video.header-vid {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }
+
+    img.header-img {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }
+
+    img.rounded {
+        border: 1px solid #eeeeee;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }
+
+    a:link, a:visited {
+        color: #1367a7;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #208799;
+    }
+
+    td.dl-link {
+        height: 160px;
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.35), /* The top layer shadow */ 5px 5px 0 0px #fff, /* The second layer */ 5px 5px 1px 1px rgba(0, 0, 0, 0.35), /* The second layer shadow */ 10px 10px 0 0px #fff, /* The third layer */ 10px 10px 1px 1px rgba(0, 0, 0, 0.35), /* The third layer shadow */ 15px 15px 0 0px #fff, /* The fourth layer */ 15px 15px 1px 1px rgba(0, 0, 0, 0.35), /* The fourth layer shadow */ 20px 20px 0 0px #fff, /* The fifth layer */ 20px 20px 1px 1px rgba(0, 0, 0, 0.35), /* The fifth layer shadow */ 25px 25px 0 0px #fff, /* The fifth layer */ 25px 25px 1px 1px rgba(0, 0, 0, 0.35); /* The fifth layer shadow */
+        margin-left: 10px;
+        margin-right: 45px;
+    }
+
+    .paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.35); /* The top layer shadow */
+
+        margin-left: 10px;
+        margin-right: 45px;
+    }
+
+
+    .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.35), /* The top layer shadow */ 5px 5px 0 0px #fff, /* The second layer */ 5px 5px 1px 1px rgba(0, 0, 0, 0.35), /* The second layer shadow */ 10px 10px 0 0px #fff, /* The third layer */ 10px 10px 1px 1px rgba(0, 0, 0, 0.35); /* The third layer shadow */
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-right: 30px;
+        margin-bottom: 5px;
+    }
+
+    .vert-cent {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    hr {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+
+    code,
+    kbd,
+    pre,
+    samp {
+        font-family: monospace, serif;
+        font-size: 1em;
+    }
+
+    pre {
+        white-space: pre-wrap;
+        width: 850px;
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    code,
+    pre {
+        font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    }
+
+    pre {
+        display: block;
+        padding: 10px;
+        margin: 10px 120px 10px;
+        font-size: 16px;
+        line-height: 1.428571429;
+        color: #333333;
+        background-color: #f5f5f5;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+    }
+
+    pre.prettyprint {
+        margin-bottom: 20px;
+    }
+
+    pre code {
+        padding: 0;
+        font-size: inherit;
+        color: inherit;
+        white-space: pre-wrap;
+        background-color: transparent;
+        border: 0;
+    }
+
+</style>
+
+<html>
+<head>
+    <title>Drive&Segment page</title>
+    <meta property="og:image" content="Path to my teaser.png"/>
+    <link rel="stylesheet" href="https://gradio.s3-us-west-2.amazonaws.com/2.6.2/static/bundle.css">
+    <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+    <meta property="og:title" content="Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation"/>
+    <meta property="og:description" content="Drive&Segment is a novel method for cross-modal unsupervised learning of semantic image segmentation
+    by leveraging synchronized LiDAR and image data"/>
+
+    <!-- Get from Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src=""></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-75863369-6');
+    </script>
+</head>
+
+<body>
+<br>
+<center>
+    <span style="font-size:36px">Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation</span>
+    <br><br>
+    <table align=center width=600px>
+        <table align=center width=800px>
+            <tr>
+                <td align=center width=150px>
+                    <center>
+                        <span style="font-size:24px"><a href="https://vobecant.github.io">A. Vobecky</a></span>
+                    </center>
+                </td>
+                <td align=center width=150px>
+                    <center>
+                        <span style="font-size:24px"><a
+                                href="https://scholar.google.com/citations?hl=en&user=XY1PVwYAAAAJ">D. Hurych</a></span>
+                    </center>
+                </td>
+                <td align=center width=150px>
+                    <center>
+                        <span style="font-size:24px"><a
+                                href="https://osimeoni.github.io/">O. Siméoni</a></span>
+                    </center>
+                </td>
+                <td align=center width=150px>
+                    <center>
+                        <span style="font-size:24px"><a href="https://scholar.google.fr/citations?user=7atfg7EAAAAJ&hl=en">S. Gydaris</a></span>
+                    </center>
+                </td>
+                <td align=center width=150px>
+                    <center>
+                        <span style="font-size:24px"><a href="https://abursuc.github.io/">A. Bursuc</a></span>
+                    </center>
+                </td>
+                <td align=center width=150px>
+                    <center>
+                        <span style="font-size:24px"><a href="https://ptrckprz.github.io/">P. Pérez</a></span>
+                    </center>
+                </td>
+                <td align=center width=150px>
+                    <center>
+                        <span style="font-size:24px"><a href="https://people.ciirc.cvut.cz/~sivic/">J. Sivic</a></span>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <table align=center width=250px>
+            <tr>
+                <td align=center width=150px>
+                    <center>
+                        <span style="font-size:24px"><a href='https://arxiv.org/abs/2203.11160'>[Paper]</a></span>
+                    </center>
+                </td>
+                <td align=center width=150px>
+                    <center>
+                        <span style="font-size:24px"><a
+                                href='https://github.com/vobecant/DriveAndSegment'>[GitHub]</a></span><br>
+                    </center>
+                </td>
+                <td align=center width=150px>
+                    <center>
+                        <span style="font-size:24px"><a
+                                href='https://huggingface.co/spaces/vobecant/DaS'>[Gradio]</a></span><br>
+                        <!--                        <span style="font-size:24px">[Videos]</span><br>-->
+                    </center>
+                </td>
+                <td align=center width=150px>
+                    <center>
+                        <span style="font-size:24px"><a
+                                href='https://colab.research.google.com/drive/126tBVYbt1s0STyv8DKhmLoHKpvWcv33H?usp=sharing'>[Colab]</a></span><br>
+                        <!--                        <span style="font-size:24px">[Videos]</span><br>-->
+                    </center>
+                </td>
+                <td align=center width=150px>
+                    <center>
+                        <span style="font-size:24px"><a
+                                href='https://www.youtube.com/embed/B9LK-Fxu7ao'>[Video]</a></span><br>
+                        <!--                        <span style="font-size:24px">[Videos]</span><br>-->
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <br>
+    </table>
+</center>
+
+<center>
+    <table align=center width=850px>
+        <tr>
+            <td width=850px>
+                <center>
+                    <img class="round" style="width:850px" src="./sources/teaser.png"/>
+                </center>
+            </td>
+        </tr>
+    </table>
+    <table align=center width=850px>
+        <tr>
+            <td>
+                <b>Proposed fully-unsupervised approach.</b> From uncurated images and LiDAR data, our Drive&Segment approach learns a semantic image segmentation model
+with no manual annotations. The resulting model performs unsupervised semantic segmentation of new unseen datasets without any human labeling. It can segment complex
+scenes with many objects, including thin structures such as <span style="color:#FF0000">people</span>, <span style="color:#800020">bicycles</span>, <span style="color:#808080">poles</span> or <span style="color:#FFA500">traffic lights</span>.
+                Black color denotes the ignored/missing label.
+            </td>
+        </tr>
+    </table>
+</center>
+
+
+<hr>
+
+<table align=center width=850px>
+    <center><h1>Abstract</h1></center>
+    <tr>
+        <td>
+This work investigates learning pixel-wise semantic image segmentation in urban scenes without any manual annotation, just from the raw non-curated data collected by cars which, equipped with cameras and LiDAR sensors, drive around a city. Our contributions are threefold. First, we propose a novel method for cross-modal unsupervised learning of semantic image segmentation by leveraging synchronized LiDAR and image data. The key ingredient of our method is the use of an object proposal module that analyzes the LiDAR point cloud to obtain proposals for spatially consistent objects. Second, we show that these 3D object proposals can be aligned with the input images and reliably clustered into semantically meaningful pseudo-classes. Finally, we develop a cross-modal distillation approach that leverages image data partially annotated with the resulting pseudo-classes to train a transformer-based model for image semantic segmentation.
+We show the generalization capabilities of our method by testing on four different testing datasets (Cityscapes, Dark Zurich, Nighttime Driving and ACDC) without any finetuning, and demonstrate significant improvements compared to the current state of the art on this problem.
+        </td>
+    </tr>
+</table>
+
+<br><br>
+<hr>
+<center>
+    <table align=center width=900px>
+        <center><h1>Qualitative Results</h1></center>
+        <tr>
+            <td width=850px>
+                <center>
+                    <img class="round" style="width:500px" src="./sources/video128_blend03_v2_10fps_640px_lanczos.gif"/>
+                    <br>
+                    <img class="round" style="width:400px" src="./sources/video_stuttgart00_remap_blended03_20fps_crop.gif"/>
+                    <img class="round" style="width:400px" src="./sources/video_stuttgart01_remap_blended03_20fps_crop2.gif"/>
+                </center>
+            </td>
+        </tr>
+    </table>
+    <table align=center width=850px>
+        <tr>
+            <td>
+                <b>Qualitative results.</b>
+                <i>Top:</i> An example of pseudo segmentation, i.e., the output of our method where the classes are not mapped to the target ground-truth classes.
+                <i>Bottom:</i> Two videos from the Cityscapes dataset. To get the pseudo -> ground-truth mapping, we apply the Hungarian algorithm.
+            </td>
+        </tr>
+    </table>
+</center>
+
+<br><br>
+
+<hr>
+<center><h1>Explanatory video</h1></center>
+<table align=center width=800px>
+    <tr>
+        <center>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/B9LK-Fxu7ao" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </center>
+    </tr>
+</table>
+
+<br><br>
+
+<hr>
+
+<center><h1>Code</h1></center>
+
+
+<table align=center width=800px>
+    <br>
+    <tr>
+        <center>
+
+            We provide inference code of our method on GitHub. Furthermore, to show our method, we provide Gradio demo (try below) and Colab notebook.
+            <br><br>
+             <td align=center width=150px>
+                    <center>
+                        <span style="font-size:24px"><a
+                                href='https://github.com/vobecant/DriveAndSegment'>[GitHub]</a></span><br>
+                    </center>
+                </td>
+                <td align=center width=150px>
+                    <center>
+                        <span style="font-size:24px"><a
+                                href='https://huggingface.co/spaces/vobecant/DaS'>[Gradio]</a></span><br>
+                        <!--                        <span style="font-size:24px">[Videos]</span><br>-->
+                    </center>
+                </td>
+                <td align=center width=150px>
+                    <center>
+                        <span style="font-size:24px"><a
+                                href='https://colab.research.google.com/drive/126tBVYbt1s0STyv8DKhmLoHKpvWcv33H?usp=sharing'>[Colab]</a></span><br>
+                        <!--                        <span style="font-size:24px">[Videos]</span><br>-->
+                    </center>
+                </td>
+
+        </center>
+    </tr>
+</table>
+<br>
+
+<div id="target"></div>
+<script src="https://gradio.s3-us-west-2.amazonaws.com/2.6.2/static/bundle.js"></script>
+<script>
+launchGradioFromSpaces("vobecant/DaS", "#target")
+</script>
+
+<br><br>
+<hr>
+
+
+<table align=center width=650px>
+    <center><h1>Paper and Supplementary Material</h1></center>
+    <tr>
+        <td><a href="https://arxiv.org/abs/2203.11160"><img class="layered-paper-big" style="height:175px"
+                                                            src="./sources/paper.png"/></a></td>
+        <td><span style="font-size:14pt">A. Vobecky, D. Hurych, O. Siméoni, S. Gydaris, A. Bursuc, P. Pérez, and J. Sivic.<br>
+				<b>Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation</b><br>
+                ArXiv preprint, 2022.<br>
+				(hosted on <a href="https://arxiv.org/abs/2203.11160">ArXiv</a>)<br>
+            <!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
+				<span style="font-size:4pt"><a href=""><br></a></span>
+				</span>
+        </td>
+    </tr>
+</table>
+<br>
+
+<table align=center width=600px>
+    <tr>
+<pre><tt>
+@article{vobecky2022drivesegment,
+  title={Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation},
+  author={Antonin Vobecky and David Hurych and Oriane SimÃ©oni and Spyros Gidaris and Andrei Bursuc and Patrick PÃ©rez and Josef Sivic},
+  journal={arXiv preprint arXiv:2203.11160},
+  year={2022}
+}</tt></pre>
+    </tr>
+</table>
+
+<table align=center width=600px>
+    <tr>
+        <td><span style="font-size:24pt"><center>
+				<a href="./sources/bibtex.txt">[Bibtex]</a>
+        </center></span>
+        </td>
+    </tr>
+</table>
+
+<hr>
+<br>
+
+<table align=center width=860px>
+    <tr>
+        <td width=700px>
+            <left>
+                <center><h1>Acknowledgements</h1></center>
+                This work was partly supported by the European Regional Development Fund under the project IMPACT (reg. no. CZ.02.1.01/0.0/0.0/15_003/0000468), and the Ministry of Education, Youth and Sports of the Czech Republic through the e-INFRA CZ (ID:90140). Antonin Vobecky was supported by CTU Student Grant Agency (reg. no. SGS21/184/OHK3/3T/37).
+            </left>
+        </td>
+    </tr>
+</table>
+
+<br>
+
+
+</body>
+</html>
+
