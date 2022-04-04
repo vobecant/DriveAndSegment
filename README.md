@@ -26,6 +26,7 @@
 
 <h2 align="center">
   <a href="https://vobecant.github.io/DriveAndSegment">project page</a> |
+  <a href="https://data.ciirc.cvut.cz/public/projects/2022DriveAndSegment/DriveAndSegment__Unsupervised_Semantic_Segmentation_of_Urban_Scenes_via_Cross-modal_Distillation.pdf">paper</a> |
   <a href="http://arxiv.org/abs/2203.11160">arXiv</a> |
   <a href="https://huggingface.co/spaces/vobecant/DaS">Gradio</a> |
   <a href="https://colab.research.google.com/drive/126tBVYbt1s0STyv8DKhmLoHKpvWcv33H?usp=sharing">Colab</a> |
@@ -39,7 +40,7 @@ This project hosts the code for inference of the Drive&Segment for unsupervised 
 > [**Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation**](http://arxiv.org/abs/2203.11160)            
 > [Antonin Vobecky](https://vobecant.github.io/), [David Hurych](https://scholar.google.com/citations?hl=en&user=XY1PVwYAAAAJ), [Oriane Siméoni](https://osimeoni.github.io/), [Spyros Gidaris](https://scholar.google.fr/citations?user=7atfg7EAAAAJ&hl=en), [Andrei Bursuc](https://abursuc.github.io/), [Patrick Pérez](https://ptrckprz.github.io/), and [Josef Sivic](https://people.ciirc.cvut.cz/~sivic/)
 >
-> *arXiv preprint ([arXiv 2203.11160](http://arxiv.org/abs/2203.11160))*
+> *arXiv preprint ([arXiv 2203.11160](http://arxiv.org/abs/2203.11160), [full paper](https://data.ciirc.cvut.cz/public/projects/2022DriveAndSegment/DriveAndSegment__Unsupervised_Semantic_Segmentation_of_Urban_Scenes_via_Cross-modal_Distillation.pdf))*
 
 **Table of Contents**
 - [Highlights](#-highlights)
