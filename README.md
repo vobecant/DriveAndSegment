@@ -33,9 +33,11 @@
   <a href="https://www.youtube.com/watch?v=B9LK-Fxu7ao">video</a> 
 </h2>
 
-# 🚙📷 Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation
+# 🚙📷 Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation (ECCV'22 oral)
 
 This project hosts the code for inference of the Drive&Segment for unsupervised image segmentation of urban scenes.
+
+It is accepted to the **ECCV'22** conference as a paper for an **oral** presentation (2.7% of submissions).
 
 > [**Drive&Segment: Unsupervised Semantic Segmentation of Urban Scenes via Cross-modal Distillation**](http://arxiv.org/abs/2203.11160)            
 > [Antonin Vobecky](https://vobecant.github.io/), [David Hurych](https://scholar.google.com/citations?hl=en&user=XY1PVwYAAAAJ), [Oriane Siméoni](https://osimeoni.github.io/), [Spyros Gidaris](https://scholar.google.fr/citations?user=7atfg7EAAAAJ&hl=en), [Andrei Bursuc](https://abursuc.github.io/), [Patrick Pérez](https://ptrckprz.github.io/), and [Josef Sivic](https://people.ciirc.cvut.cz/~sivic/)
