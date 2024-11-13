@@ -21,15 +21,16 @@
 </style>
 
 <style>
-	.video-container {
+	.videoWrapper {
 	    position: relative;
-	    padding-bottom: 56.25%;
-	    height: 0;
-	    overflow: hidden;
-	    max-width: 100%;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+/* 	    max-width: 100%; */
 	}
 	
-	.video-container iframe {
+	.videoWrapper iframe {
 	    position: absolute;
 	    top: 0;
 	    left: 0;
@@ -212,7 +213,7 @@
                 </span>
 
                             <!-- Video Link. -->
-                            <span class="link-block">
+	    	<span class="link-block">
                   <a href="https://www.youtube.com/watch?v=B9LK-Fxu7ao" target="_blank" rel="noopener noreferrer"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -304,7 +305,7 @@
                 <h2 class="title is-2">Explanatory video</h2>
             </div>
         </div>
-        <div class="columns is-centered">
+        <div class="videoWrapper">
             <iframe width="700" height="394" src="https://www.youtube.com/embed/B9LK-Fxu7ao"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
